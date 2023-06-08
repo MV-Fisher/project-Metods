@@ -42,3 +42,4 @@ public class Main {
         deliveryDistance(95);
     }
 }
+// Домашнее задание считаю выполненным.
