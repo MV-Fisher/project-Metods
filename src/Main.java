@@ -1,45 +1,54 @@
 public class Main {
-    public static void printTask(int num) {
-        System.out.println("Задача № " + num +".") ;
+    public static void main(String[] args) {
+        printNumberTask(1) ;
+        checkingLongYear(2023);
+        printNumberTask(2);
+        anableCklientPhone(2016,0);
+        printNumberTask(3);
+        anableDistanceToCklient(95);
     }
-    public static void jostYear(int year) {
+    public static void checkingLongYear(int year) {
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0 ) {
-            System.out.println(year + " - год является високосным.");
+            System.out.println( year + " - год является високосным.");
         }else {
             System.out.println( year + " - год не является високосным.");
         }
     }
-    public static void myPhone(int clientDeviceYear, int clientOS) {
-        if ( clientDeviceYear < 2015 ) {
-            if (clientOS == 0) {
+    public static void anableCklientPhone(int clientDeviceYear, int clientOS) {
+        int Year = 2015 ;
+        int OS = 0 ;
+        int OS2 = 1 ;
+        if (clientOS != OS && clientOS != OS2 ) {
+            System.out.println("Операционная система не поддерживается.");
+        } else if ( clientDeviceYear < Year ) {
+            if (clientOS == OS) {
                 System.out.println("Установите облегчённую версию приложения для iOS по ссылке.");
             } else {
                 System.out.println("Установите облегчённую версию приложения для Android по ссылке.");
             }
-        } else if (clientOS == 1) {
+        } else if (clientOS == OS2) {
             System.out.println("Установите версию приложения для Android.");
         } else {
             System.out.println("Установите версию приложения для iOS по ссылке.");
         }
     }
-    public static void deliveryDistance(int deliveryDistance) {
+    public static int anableDistanceToCklient(int deliveryDistance) {
+        int deliveryDays = 0 ;
         if ( deliveryDistance > 100 ) {
-            System.out.println("Извините, доставки нет.");
+            deliveryDays = -1 ;
         } else if ( deliveryDistance < 20 ) {
-            System.out.println("Доставка карты займёт сутки.");
+            deliveryDays = 1 ;
         } else if ( deliveryDistance > 20 && deliveryDistance < 60 ) {
-            System.out.println("Доставка карты займёт двое суток.");
+            deliveryDays = 2 ;
         } else if( deliveryDistance > 60 && deliveryDistance < 100 ) {
-            System.out.println("Доставка карты займёт трое суток.");
+            deliveryDays = 3 ;
         }
+        System.out.println("Доставка займёт: " + deliveryDays + " дня(дней)."  );
+        return deliveryDays ;
     }
-    public static void main(String[] args) {
-        printTask(1) ;
-        jostYear(2023);
-        printTask(2);
-        myPhone(2014,1);
-        printTask(3);
-        deliveryDistance(95);
+    public static void printNumberTask(int num) {
+        System.out.println("Задача № " + num + ".") ;
     }
 }
+// Домашнее задание выполненно с учётом замечаний.
 // Домашнее задание считаю выполненным.
